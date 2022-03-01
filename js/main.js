@@ -1,4 +1,4 @@
-let start = document.getElementById('start')
+let start = document.getElementById('action-btn')
 
 let timeString = document.getElementById('time-string')
 
@@ -7,13 +7,26 @@ let sec = 00;
 
 let startTimer;
 
-start.addEventListener('click', function(){
+start.addEventListener('click', Start)
+
+function Start(){
+    start.removeEventListener('click', Start);
+    start.addEventListener('click',Stop);
+    start.innerText =`Stop`
     if(startTimer === undefined){
         startTimer = setInterval(timer, 1000)
     } else {
         alert('Timer is running already')
     }
-})
+}
+
+function Stop(){
+    start.removeEventListener('click',Stop);
+    start.addEventListener('click',Start);
+    start.innerText=`Start`;
+    stopInterval();
+    startTimer = undefined;
+}
 
 function timer(){
     //Work timer countdown
@@ -48,8 +61,8 @@ function timer(){
             startTimer = undefined;
         }
     }
+}
 
 function stopInterval(){
     clearInterval(startTimer);
-}
 }
