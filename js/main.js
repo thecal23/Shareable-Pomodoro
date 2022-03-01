@@ -2,8 +2,8 @@ let start = document.getElementById('start')
 
 let timeString = document.getElementById('time-string')
 
-let min = 0;
-let sec = 0;
+let min = 25;
+let sec = 00;
 
 let startTimer;
 
@@ -17,11 +17,15 @@ start.addEventListener('click', function(){
 
 function timer(){
     //Work timer countdown
-    min = 25;
-    sec = 0;
+    
     if(sec != 0){
         sec--;
-        timeString.innerText = `${min}:${sec}`;
+        if (min!=0 && sec <10){
+            timeString.innerText = `${min}:0${sec}`
+        } else{
+            timeString.innerText = `${min}:${sec}`;
+        }
+        
     } else if( min !=0 && sec == 0){
         sec = 59;
         min--;
