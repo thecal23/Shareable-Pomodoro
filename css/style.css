@@ -1,0 +1,14 @@
+.action-btn-div {
+	margin: auto !important;
+}
+
+#action-btn {
+	padding: 1.1rem 2rem 1.2rem;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 400;
+}
