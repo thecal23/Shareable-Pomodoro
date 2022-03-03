@@ -16,11 +16,8 @@ function Start(){
     start.removeEventListener('click', Start);   //Replace Start button with Stop button
     start.addEventListener('click',Stop);
     start.innerText =`Stop`
-    if(startTimer === undefined){
-        startTimer = setInterval(timer, 1000)
-    } else {
-        alert('Timer is running already')
-    }
+    startTimer = setInterval(timer, 1000)
+    document.querySelector("#timerState").innerText = "Time to FOCUS";
 }
 
 //Stop Button
@@ -30,6 +27,7 @@ function Stop(){
     start.innerText=`Start`;
     stopInterval();
     startTimer = undefined;
+    document.querySelector("#timerState").innerText = "Timer STOP";
 }
 
 //Reset button
@@ -41,6 +39,7 @@ function Reset(){
         stopInterval();
         startTimer = undefined;
         timeString.innerText = `${min}:0${sec}`;
+        document.querySelector("#timerState").innerText = "Timer state!";
     }
 }
 
