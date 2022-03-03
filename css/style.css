@@ -4,7 +4,6 @@
 
 #action-btn {
 	padding: 1.1rem 2rem 1.2rem;
-    border-radius: 4px;
     background-color: #000;
     color: #fff;
     font-size: 1.5rem;
@@ -15,4 +14,14 @@
 
 .hidden{
 	display: none;
+}
+.pomo-container {
+	margin-top: 144px;
+	max-width: 688px !important;
+	background-color: #FFFFFF !important;
+	border: 1px solid #ebebeb;
+}
+
+body {
+	background-color: #F8F8F8 !important;
 }
