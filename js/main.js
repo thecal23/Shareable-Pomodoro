@@ -81,7 +81,7 @@ function stopInterval(){
     clearInterval(startTimer);
 }
 
-inputEnter = document.getElementById("#basic-addon1")
+inputEnter = document.getElementById("basic-addon1")
 inputEnter.addEventListener('click', checkForClick)
 
 function checkForClick(){
