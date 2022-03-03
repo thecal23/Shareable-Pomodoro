@@ -34,12 +34,14 @@ function Stop(){
 
 //Reset button
 function Reset(){
-    min = 25;
-    sec = 00;
+    if(startTimer === undefined){
+        min = 25;
+        sec = 00;
 
-    stopInterval();
-    startTimer = undefined;
-    timeString.innerText = `${min}:0${sec}`;
+        stopInterval();
+        startTimer = undefined;
+        timeString.innerText = `${min}:0${sec}`;
+    }
 }
 
 function timer(){
@@ -81,9 +83,18 @@ function stopInterval(){
     clearInterval(startTimer);
 }
 
-inputEnter = document.getElementById("#basic-addon1")
+inputEnter = document.getElementById("basic-addon1")
 inputEnter.addEventListener('click', checkForClick)
 
 function checkForClick(){
-    inputEnter.classList.toggle("hidden");
+    document.querySelector(".col-6").classList.toggle("hidden");
+    document.querySelector("#focusTask").innerText = document.querySelector("#inputTask").value;
+}
+
+document.querySelector("#magic-btn").addEventListener('click', bringBackInputForm)
+
+function bringBackInputForm(){
+    document.querySelector(".col-6").classList.toggle("hidden");
+    document.querySelector("#focusTask").innerText = "";
+    document.querySelector("#inputTask").value = "";
 }

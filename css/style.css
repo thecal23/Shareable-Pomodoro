@@ -12,3 +12,7 @@
     line-height: 1.4;
     font-weight: 400;
 }
+
+.hidden{
+	display: none;
+}
